@@ -5,10 +5,13 @@ This project uses Quarkus, the Supersonic Subatomic Java Framework.
 If you want to learn more about Quarkus, please visit its website: https://quarkus.io/ .
 
 ## Prerequisites for Locally Running the application
+### Create a local S3 instance using docker or podman
 ```
 docker run -it --publish 8008:4566 -e SERVICES=s3 -e START_WEB=0 localstack/localstack:0.11.5
 ```
 
+### Configure the aws client with fake creds for the local instance
+> **_NOTE:_** For these steps, you must have the aws cli installed https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
 ```
 aws configure --profile localstack
 AWS Access Key ID [None]: test-key
@@ -17,6 +20,7 @@ Default region name [None]: us-east-1
 Default output format [None]:
 ```
 
+### Create a bucket for testing
 ```
 aws s3 mb s3://quarkus.s3.quickstart --profile localstack --endpoint-url=http://localhost:8008
 ```
