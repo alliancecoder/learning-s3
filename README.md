@@ -25,6 +25,8 @@ Default output format [None]:
 aws s3 mb s3://quarkus.s3.quickstart --profile localstack --endpoint-url=http://localhost:8008
 ```
 
+> **_NOTE:_** The default setting for quarkus.http.limits.max-body-size is 10240K. This may limit your ability to upload multipart files larger than the default. If you want to upload larger files, you will need to set this limit explicitly.
+
 ## Running the application in dev mode
 
 You can run your application in dev mode that enables live coding using:
