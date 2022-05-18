@@ -5,17 +5,20 @@ This project uses Quarkus, the Supersonic Subatomic Java Framework.
 If you want to learn more about Quarkus, please visit its website: https://quarkus.io/ .
 
 ## Prerequisites for Locally Running the application
-```docker run -it --publish 8008:4566 -e SERVICES=s3 -e START_WEB=0 localstack/localstack:0.11.5
+```
+docker run -it --publish 8008:4566 -e SERVICES=s3 -e START_WEB=0 localstack/localstack:0.11.5
 ```
 
-```aws configure --profile localstack
+```
+aws configure --profile localstack
 AWS Access Key ID [None]: test-key
 AWS Secret Access Key [None]: test-secret
 Default region name [None]: us-east-1
 Default output format [None]:
 ```
 
-```aws s3 mb s3://quarkus.s3.quickstart --profile localstack --endpoint-url=http://localhost:8008
+```
+aws s3 mb s3://quarkus.s3.quickstart --profile localstack --endpoint-url=http://localhost:8008
 ```
 
 ## Running the application in dev mode
